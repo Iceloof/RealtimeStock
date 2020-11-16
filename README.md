@@ -13,7 +13,7 @@
 ![GitHub issues](https://img.shields.io/github/issues-raw/Iceloof/RealtimeStock)
 ![GitHub](https://img.shields.io/github/license/Iceloof/RealtimeStock)
 
-This package is supported Shanghai Exchange, Shenzhen Exchange, HongKong Exchange, and US Market(NASDAQ, NYSE, AMEX).
+This package is supported realtime stock quote from Shanghai Exchange, Shenzhen Exchange, HongKong Exchange, and US Market(NASDAQ, NYSE, AMEX).
 
 - The method `futuQuote`, `futuQuoteById`, `tigerQuote` and `tencentQuote` support all the markets, `sinaQuote` is not support US Market. 
 - The method `getQuote` will random choose one of the method to get the realtime quote, this will avoid being blocked by one of the sources when doing heavy requests.
