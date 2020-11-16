@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Iceloof/RealtimeStock",
     packages=setuptools.find_packages(),
-    install_requires=['requests'],
+    install_requires=['requests','pytz'],
     classifiers=[
         "Programming Language :: Python :: 3.8",
         "License :: OSI Approved :: MIT License",
