@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="RealtimeStock",
-    version="1.0.1",
+    version="1.0.2",
     author="Hurin Hu",
     author_email="hurin@live.ca",
     description="Realtime stock quote for Python",
