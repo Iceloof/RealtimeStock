@@ -143,8 +143,10 @@ def tencentQuote(market, stock_code):
 
 def getQuote(market, stock_code):
     result = {'code': stock_code, 'name': '', 'price': -9999999, 'time': ''}
-    if market != 'us':
-        value = random.randint(1,5)
+    if market == 'us':
+        value = random.randint(3,5)
+    elif market == 'hk':
+        value = random.randint(4,5)
     else:
         value = random.randint(3,5)
     if value == 1:
@@ -152,11 +154,11 @@ def getQuote(market, stock_code):
     elif value == 2:
         r = futuQuote(market, stock_code)
     elif value == 3:
-        r = xueqiuQuote(market, stock_code)
-    elif value == 4:
-        r = tigerQuote(market, stock_code)
-    elif value == 5:
         r = tencentQuote(market, stock_code)
+    elif value == 4:
+        r = xueqiuQuote(market, stock_code)
+    elif value == 5:
+        r = tigerQuote(market, stock_code)
     result['code'] = r['code']
     result['name'] = r['name']
     result['price'] = r['price']

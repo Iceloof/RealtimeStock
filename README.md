@@ -13,8 +13,13 @@
 
 This package is supported realtime stock quote from Shanghai Exchange, Shenzhen Exchange, HongKong Exchange, and US Market(NASDAQ, NYSE, AMEX).
 
-- The method `futuQuote`, `tigerQuote`, `xueqiuQuote` and `tencentQuote` support all the markets, `sinaQuote` is not support US Market, `futuQuote` is only provided 20-minute delay data for US Market and realtime data for other markets. 
 - The method `getQuote` will random choose one of the method to get the realtime quote, this will avoid being blocked by one of the sources when doing heavy requests.
+
+- Realtime SH/SZ: `sinaQuote`, `futuQuote`, `tigerQuote`, `xueqiuQuote`, `tencentQuote`
+- Realtime HK: `xueqiuQuote`, `tigerQuote`
+- Realtime US: `xueqiuQuote`, `tigerQuote`, `tencentQuote`
+- Delay HK: `sinaQuote`, `futuQuote`
+- Delay US: `futuQuote`
 
 ## Install
 ```
@@ -33,21 +38,15 @@ from RealtimeStock import sinaQuote, futuQuote, tigerQuote,xueqiuQuote, tencentQ
 
 - Get realtime quote (HKEX)
 ```
-print(sinaQuote('hk','07200'))
-print(futuQuote('hk','07200'))
 print(xueqiuQuote('hk','07200'))
 print(tigerQuote('hk','07200'))
-print(tencentQuote('hk','07200'))
 print(getQuote('hk','07200'))
 ```
 Sample output
 ```
-{'code': '07200', 'name': 'ＦＬ二南方恒指', 'en_name': 'FL2 CSOP HSI', 'price': 8.74, 'time': '2020-11-16 16:00:00'}
-{'code': '07200', 'name': '南方两倍看多恒指', 'en_name': 'CSOP HANG SENG INDEX DAILY', 'price': 8.74, 'time': '2020-11-16 16:00:00'}
 {'code': '07200', 'name': 'FL 二南方恒指', 'price': 8.74, 'time': '2020-11-16 16:08:36'}
 {'code': '07200', 'name': 'FL二南方恒指', 'price': 8.74, 'time': '2020-11-16 16:08:36'}
-{'code': '07200', 'name': 'FL二南方恒指', 'price': 8.74, 'time': '2020-11-16 16:00:00'}
-{'code': '07200', 'name': 'FL二南方恒指', 'price': 8.74, 'time': '2020-11-16 16:00:00'}
+{'code': '07200', 'name': 'FL二南方恒指', 'price': 8.74, 'time': '2020-11-16 16:08:36'}
 ```
 
 - Get realtime quote (ShanghaiExchange)
